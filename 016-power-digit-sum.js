@@ -28,5 +28,3 @@ function updateArray(numArray, len) {
     }
   }
 }
-
-powerDigitSum(15);
