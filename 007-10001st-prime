@@ -1,0 +1,20 @@
+function nthPrime(n) {
+  let i=0, currPrime=2
+  for(let i=1; i<n; i++)
+    currPrime=nextPrime(currPrime+1)
+  return currPrime
+}
+
+function nextPrime(n) {
+  for(;;n++)
+    if(isPrime(n))
+      return n
+}
+
+function isPrime(n) {
+  let s=Math.floor(Math.sqrt(n))
+  for(let i=2; i<=s; i++)
+    if(n%i==0)
+      return false
+  return true
+}
