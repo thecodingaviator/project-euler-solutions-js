@@ -1,17 +1,19 @@
 function smallestMult(n) {
+  // Fill prod with 1 to n
   let prod=[...Array(n).keys()].map(i=>i+1)
+  // Divide all numbers in prod by their factors until prime
   for(let i=n-1; i>=0; i--)
     while(!isPrime(prod[i]))
       for(let j=i-1; j>=0; j--)
         if(prod[i]%prod[j]==0)
           prod[i]/=prod[j]
-  let product=1
+  // Because multiples of 2 greater than 7 get reduced to 1
   if(n>7)
-    for(let i=8; i<n; i*=2)
-      prod[i-1]=2
+    prod[1]=2 ** Math.floor(Math.log2(n)-1)
+  // Calculate products from prod array
+  let product=1
   for(let i=0; i<n; i++)
     product*=prod[i]
-  console.log(prod)
   return product
 }
 
