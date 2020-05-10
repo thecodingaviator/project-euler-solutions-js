@@ -8,8 +8,8 @@ function longestCollatzSequence(limit) {
     localTerm=i
     for(;localTerm!=1;)
     {
-    localTerm=localTerm%2==0?localTerm/2:3*localTerm+1
-    currCounter++
+      localTerm=localTerm%2==0?localTerm/2:3*localTerm+1
+      currCounter++
     }
     if(currCounter>counterOrig){
       term=i
