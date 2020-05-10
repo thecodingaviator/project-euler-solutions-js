@@ -16,7 +16,8 @@ function smallestMult(n) {
 }
 
 function isPrime(n) {
-  for(let i=2; i<n; i++)
+  let s=Math.floor(Math.sqrt(n))
+  for(let i=2; i<=s; i++)
     if(n%i==0)
       return false
   return true
